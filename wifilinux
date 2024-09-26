@@ -1,0 +1,25 @@
+  454  cd /usr/src/linux
+  455  dmesg | grep -i fail|head
+  456  ifconfig -a
+  458  ls -l /etc/portage/package.use/
+  459  cat /etc/portage/package.use/zz-autounmask 
+  460  vi /etc/portage/package.use/zz-autounmask 
+		>=net-wireless/wpa_supplicant-2.6-r10 qt5 wps
+  461  emerge -pv wpa_supplicant
+  462  emerge -qv wpa_supplicant
+  464  wpa_gui => fonctionne tjrs pas
+  465  systemctl start wpa_supplicant
+  466  systemctl enable wpa_supplicant
+  467  reboot
+  468  systemctl start wpa_supplicant
+  469  systemctl enable wpa_supplicant
+  470  ifconfig -a
+  475  systemctl --type=service | grep wpa
+  483  systemctl start wpa_supplicant@wlo1
+  486  ifconfig -a
+  487  cd /etc/wpa_supplicant/
+  490  ls -la
+  491  vi
+  492  mv config wpa_supplicant-wlo1.conf
+  493  systemctl restart wpa_supplicant@wlo1
+  494  wpa_gui 
